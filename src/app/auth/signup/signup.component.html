@@ -1,0 +1,17 @@
+<form [formGroup]="signupForm"
+      (ngSubmit)="onSubmit()">
+  <label for="email">Votre email</label>
+  <input type="text"
+         id="email"
+         class="form-control"
+         formControlName="email">
+  <label for="password">Votre mot de passe</label>
+  <input type="password"
+         id="password"
+         class="form-control"
+         formControlName="password">
+  <button type="submit"
+          [disabled]="signupForm.invalid"
+          class="btn btn-info">Créer le compte</button>
+</form>
+<p class="text-danger">{{errorMessage}}</p>
